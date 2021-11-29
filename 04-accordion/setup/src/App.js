@@ -12,7 +12,11 @@ function App() {
           return <SingleQuestion key={questions.id} {...question} />
         })}
         </section>
+     
       </div>
+<div>
+  
+</div>
     </main>
   );
 }

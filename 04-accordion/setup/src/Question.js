@@ -11,11 +11,12 @@ const Question = ({ title, info }) => {
       <header>
         <h4>{title}</h4>
         <button className="btn" onClick={() => setShowInfo(!showInfo)}>
-          btn
+          {showInfo? <AiOutlineMinus /> :<AiOutlinePlus />}
         </button>
       </header>
       {showInfo && <p>{info}</p>}
     </article>
+   
   );
 };
 
