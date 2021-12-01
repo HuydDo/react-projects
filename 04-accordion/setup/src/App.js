@@ -8,15 +8,12 @@ function App() {
       <div className="container">
         <h3>questions and answers about login</h3>
         <section className="info">
-        {questions.map((question) => {
-          return <SingleQuestion key={questions.id} {...question} />
-        })}
+          {questions.map((question) => {
+            return <SingleQuestion key={questions.id} {...question} />;
+          })}
         </section>
-     
+        
       </div>
-<div>
-  
-</div>
     </main>
   );
 }
