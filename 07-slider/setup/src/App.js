@@ -15,21 +15,31 @@ function App() {
       <div className="section-center">
         {people.map((person, personIndex) => {
           const { id, image, name, title, quote } = person;
+          let position = "nextSlide";
+          if (personIndex === index) {
+            position = "activeSlide";
+          }
+          if (
+            personIndex === index - 1 ||
+            (index === 0 && personIndex === people.length - 1)
+          ) {
+            position = "lastSlide";
+          }
           return (
-            <article key={id}>
-              <img src={image} alt={name} className='person-img' />
+            <article className={position} key={id}>
+              <img src={image} alt={name} className="person-img" />
               <h4>{name}</h4>
               <p className="title">{title}</p>
               <p className="text">{quote}</p>
-              <FaQuoteRight className='icon' />
+              <FaQuoteRight className="icon" />
             </article>
           );
         })}
-        <button className='prev'>
-        <FiChevronLeft></FiChevronLeft>
+        <button className="prev">
+          <FiChevronLeft></FiChevronLeft>
         </button>
-        <button className='next'>
-        <FiChevronRight></FiChevronRight>
+        <button className="next">
+          <FiChevronRight></FiChevronRight>
         </button>
       </div>
     </section>
