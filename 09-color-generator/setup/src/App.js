@@ -6,15 +6,28 @@ import Values from "values.js";
 function App() {
   const [color, setColor] = useState("");
   const [erro, setError] = useState(false);
-  const [list,setList] = useState([]);
+  const [list, setList] = useState([]);
 
-  constt handleSubmit = (e) =>{
+  const handleSubmit = (e) => {
     e.prentDefault();
-    console.log('hello');
+    console.log("hello");
   }
-  return  <section className="container">
-    
-  </section>;
+  return (
+    <>
+      <section className="container">
+        <h3>color generator</h3>
+        <form onSubmit={handleSubmit}>
+          <input type="text" value={color} onChange={(e)=> setColor(e.targt.value)}
+          placeholder="#f15025"
+          />
+        <button className="btn" type="submit">submit</button>
+        </form>
+        </section>
+      <section>
+        <h4>list goes here</h4>
+      </section>
+    </>
+  );
 }
 
 export default App;
