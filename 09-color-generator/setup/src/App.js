@@ -10,8 +10,10 @@ function App() {
 
   const handleSubmit = (e) => {
     e.prentDefault();
-    console.log("hello");
+    let colors = new Values(color).all(10)
+    console.log(colors)
   }
+
   return (
     <>
       <section className="container">
