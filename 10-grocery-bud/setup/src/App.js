@@ -8,14 +8,21 @@ function App() {
   const [isEditing, setEditing] = useState(false);
   const [editId, setEditID] = useState(null);
   const [alert, setAlert] = useState({ show: false, msg: "", type: "" });
-  return <section className="section-center">
-    <div className="grocery-container">
-      <List />
-      <button className="clear-btn">
-        clear items
-      </button>
-    </div>
-  </section>
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+    console.log('hello')
+  }
+  return (
+    <section className="section-center">
+      <form className="grocery-form" onSubmit={handleSubmit}>
+        {alert.show && <Alert />}
+      </form>
+      <div className="grocery-container">
+        <List />
+        <button className="clear-btn">clear items</button>
+      </div>
+    </section>
+  );
 }
 
 export default App;
