@@ -10,7 +10,15 @@ function App() {
   const [alert, setAlert] = useState({ show: false, msg: "", type: "" });
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("hello");
+    if(!name){
+      //display alert
+    } else if(name && isEditing){
+      // editing
+    }
+    else{
+      //show alert
+      const newItem = {id: new Date().getTime().toString(),title:name};
+    }
   };
   return (
     <section className="section-center">
