@@ -10,14 +10,15 @@ function App() {
   const [alert, setAlert] = useState({ show: false, msg: "", type: "" });
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(!name){
+    if (!name) {
       //display alert
-    } else if(name && isEditing){
+    } else if (name && isEditing) {
       // editing
-    }
-    else{
+    } else {
       //show alert
-      const newItem = {id: new Date().getTime().toString(),title:name};
+      const newItem = { id: new Date().getTime().toString(), title: name};
+      setList([...list,newItem])
+      setName('')
     }
   };
   return (
@@ -38,10 +39,11 @@ function App() {
           </button>
         </div>
       </form>
+      {list.length >0 && (
       <div className="grocery-container">
-        <List />
+        <List items={list}/>
         <button className="clear-btn">clear items</button>
-      </div>
+      </div>)}
     </section>
   );
 }
