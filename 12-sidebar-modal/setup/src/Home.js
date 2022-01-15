@@ -5,11 +5,11 @@ import {  useGlobalContext } from "./context";
 
 const Home = () => {
   // const data = useContext(AppContext);
-  const {openSideBar, openModal} = useGlobalContext(); //use custom hook
+  const {openSidebar, openModal} = useGlobalContext(); //use custom hook
   // console.log(data);
   return (
     <main>
-      <button className="sidebar-toggle" onClick={openSideBar}>
+      <button className="sidebar-toggle" onClick={openSidebar}>
         <FaBars />
       </button>
       <button className="btn" onClick={openModal}>
