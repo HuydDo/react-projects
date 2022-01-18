@@ -1,9 +1,30 @@
-import React from 'react'
-import logo from './images/logo.svg'
-import { FaBars } from 'react-icons/fa'
+import React from "react";
+import logo from "./images/logo.svg";
+import { FaBars } from "react-icons/fa";
+import { useGlobalContext } from "./context";
 
 const Navbar = () => {
-  return <h2>navbar component</h2>
-}
+  const { openSidebar, openSubmenu, closeSubmenu } = useGlobalContext();
+  return (
+    <nav className="nav">
+      <div className="nav-center">
+        <div className="nav-header">
+          <img src={logo} className="nav-logo" alt="stripe" />
+          <button className="btn toggle-btn" onClick={openSidebar}>
+            <FaBars />
+          </button>
+        </div>
+      </div>
+      <ul className="nav-link">
+        <li>
+          <button className="linl-btn">products</button>
+          <button className="linl-btn">developers</button>
+          <button className="link-btn">company</button>
+        </li>
+      </ul>
+      <button className='btn signin-btn'>Sign in</button>
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;
