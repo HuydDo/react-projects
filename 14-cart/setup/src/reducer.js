@@ -1,5 +1,5 @@
 const reducer = (state, action) => {
-/*   if (action.type === "CLEAR_CART") {
+  /*   if (action.type === "CLEAR_CART") {
     return { ...state, cart: [] };
   }
   if (action.type === "REMOVE") {
@@ -71,7 +71,7 @@ const reducer = (state, action) => {
       .filter((cartItem) => cartItem.amount !== 0);
     return { ...state, cart: tempCart };
   }
-  return state; */
+   throw new Error('no matching action type') */
 
   switch (action.type) {
     case "CLEAR_CART":
@@ -144,7 +144,7 @@ const reducer = (state, action) => {
     }
 
     default:
-      return state;
+      throw new Error("no matching action type");
   }
 };
 
