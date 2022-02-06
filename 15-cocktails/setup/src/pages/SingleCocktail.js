@@ -44,14 +44,15 @@ const SingleCocktail = () => {
             instructions,
             ingredients,
           };
+          setCocktail(newCocktail);
         } else {
           setCocktail(null);
         }
         setLoading(false);
       } catch (error) {
         console.log(error);
-        setLoading(false);
       }
+      setLoading(false);
     }
     getCocktail();
   }, [id]);
@@ -95,9 +96,8 @@ const SingleCocktail = () => {
           </p>
           <p>
             <span className="drink-data">ingredients :</span>
-            {ingredients.map((item,index)=>{  
-              return item ? <span key={index}>{item}</span>
-              : null
+            {ingredients.map((item, index) => {
+              return item ? <span key={index}>{item}</span> : null;
             })}
           </p>
         </div>
