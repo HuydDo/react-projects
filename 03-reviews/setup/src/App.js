@@ -13,9 +13,9 @@ function App() {
       </secttion>
     </main>
   );
-  {
-    /* <FaGithubSquare className='icon'/> */
-  }
+ /*  {
+    <FaGithubSquare className='icon'/> 
+  } */
 }
 
 export default App;
