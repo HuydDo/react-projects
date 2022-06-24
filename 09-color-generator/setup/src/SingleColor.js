@@ -6,30 +6,60 @@ const SingleColor = ({ rgb, weight, index, hexColor }) => {
   const [alert, setAlert] = useState(false);
   const bcg = rgb.join(",");
   const hex = rgbToHex(...rgb);
-  const hexValue = `#${hexColor}`
+  const hexValue = `#${hexColor}`;
+
   useEffect(()=>{
-    const timeout = setTimeout(()=>{
+     const timeout = setTimeout(()=>{
       setAlert(false)
-    },3000)
-    return ()=>clearTimeout(timeout)
+     },3000)
+     return ()=>clearTimeout(timeout)
   },[alert])
   return (
     <article
       className={`color ${index > 10 && "color-light"}`}
       style={{ backgroundColor: `rgb(${bcg})` }}
-      onClick={()=>{
+      onClick={() => {
         setAlert(true);
-        navigator.clipboard.writeText(hexValue)
+        navigator.clipboard.writeText(hexValue);
       }}
     >
       <p className="percent-value">{weight}%</p>
-      <p className="color-value"></p>
-      {/* <p>{hex}</p> */}
-      {/* <p>{hexColor}</p> */}
-      <p>{hexValue}</p>
+      {/* <p className="color-value">{hex}</p> */}
+      <p className="color-value">{hexValue}</p>
       {alert && <p className="alert">copied to clipboard</p>}
     </article>
   );
 };
+
+//  const SingleColor = ({ rgb, weight, index, hexColor }) => {
+//   console.log(hexColor);
+//   const [alert, setAlert] = useState(false);
+//   const bcg = rgb.join(",");
+//   const hex = rgbToHex(...rgb);
+//   const hexValue = `#${hexColor}`
+//   useEffect(()=>{
+//     const timeout = setTimeout(()=>{
+//       setAlert(false)
+//     },3000)
+//     return ()=>clearTimeout(timeout)
+//   },[alert])
+//   return (
+//     <article
+//       className={`color ${index > 10 && "color-light"}`}
+//       style={{ backgroundColor: `rgb(${bcg})` }}
+//       onClick={()=>{
+//         setAlert(true);
+//         navigator.clipboard.writeText(hexValue)
+//       }}
+//     >
+//       <p className="percent-value">{weight}%</p>
+//       <p className="color-value"></p>
+//       {/* <p>{hex}</p> */}
+//       {/* <p>{hexColor}</p> */}
+//       <p>{hexValue}</p>
+//       {alert && <p className="alert">copied to clipboard</p>}
+//     </article>
+//   );
+// };
 
 export default SingleColor;
