@@ -1,22 +1,35 @@
 import React, { useContext } from "react";
 import { FaBars } from "react-icons/fa";
 // import { AppContext, useGlobalContext } from "./context";
-import {  useGlobalContext } from "./context";
+import { useGlobalContext } from "./context";
 
 const Home = () => {
   // const data = useContext(AppContext);
-  const {openSidebar, openModal} = useGlobalContext(); //use custom hook
-  // console.log(data);
+  const {openSidebar,openModal} = useGlobalContext();
   return (
     <main>
       <button className="sidebar-toggle" onClick={openSidebar}>
         <FaBars />
       </button>
-      <button className="btn" onClick={openModal}>
-        show modal
-      </button>
+      <button className="btn" onClick={openModal}>show modal</button>
     </main>
   );
 };
+
+// const Home = () => {
+//   // const data = useContext(AppContext);
+//   const {openSidebar, openModal} = useGlobalContext(); //use custom hook
+//   // console.log(data);
+//   return (
+//     <main>
+//       <button className="sidebar-toggle" onClick={openSidebar}>
+//         <FaBars />
+//       </button>
+//       <button className="btn" onClick={openModal}>
+//         show modal
+//       </button>
+//     </main>
+//   );
+// };
 
 export default Home;
